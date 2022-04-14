@@ -8,8 +8,8 @@ import random
 import time
 
 romaji_data = pd.read_excel(r'A:\KJC\kanji_list.xlsx')
-romaji_xlsx = pd.DataFrame(romaji_data, columns= ['ROMAJI'])
-romaji_list = romaji_xlsx['ROMAJI'].values.tolist()
+romaji_xlsx = pd.DataFrame(romaji_data, columns= ['EN'])
+romaji_list = romaji_xlsx['EN'].values.tolist()
 
 kanji_data = pd.read_excel(r'A:\KJC\kanji_list.xlsx')
 kanji_xlsx = pd.DataFrame(romaji_data, columns= ['KANJI'])
@@ -18,7 +18,7 @@ kanji_list = kanji_xlsx['KANJI'].values.tolist()
 #---------------------------------WINDOW-AND-FRAMES---------------------------------
 
 window = Tk()
-window.title("KJC Trainer")
+window.title("KJC Trainer | Best App To Learn Kanji!")
 window.geometry('650x280')  
 
 kanji_window=Frame(window,bg="#1F1F1F",bd=5)
@@ -28,7 +28,6 @@ hiragana_window=Frame(window,bg="#1F1F1F",bd=5)
 hiragana_window.pack(fill="both")
 
 #---------------------------------FUNCTIONS---------------------------------
-
 
 def next_kanji():
 	global last_random_index
