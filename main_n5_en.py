@@ -8,21 +8,21 @@ import random
 import time
 
 romaji_data = pd.read_excel(r'A:\KJC\kanji_list.xlsx')
-romaji_xlsx = pd.DataFrame(romaji_data, columns= ['RU DEF'])
-romaji_list = romaji_xlsx['RU DEF'].values.tolist()
+romaji_xlsx = pd.DataFrame(romaji_data, columns= ['EN N5'])
+romaji_list = romaji_xlsx['EN N5'].values.tolist()
 
 kanji_data = pd.read_excel(r'A:\KJC\kanji_list.xlsx')
-kanji_xlsx = pd.DataFrame(romaji_data, columns= ['KANJI DEF'])
-kanji_list = kanji_xlsx['KANJI DEF'].values.tolist()
+kanji_xlsx = pd.DataFrame(kanji_data, columns= ['KANJI N5'])
+kanji_list = kanji_xlsx['KANJI N5'].values.tolist()
 
 kana_data = pd.read_excel(r'A:\KJC\kanji_list.xlsx')
-kana_xlsx = pd.DataFrame(kana_data, columns= ['KANA DEF'])
-kana_list = kana_xlsx['KANA DEF'].values.tolist()
+kana_xlsx = pd.DataFrame(kana_data, columns= ['KANA N5'])
+kana_list = kana_xlsx['KANA N5'].values.tolist()
 
 #---------------------------------WINDOW-AND-FRAMES---------------------------------
 
 window = Tk()
-window.title("KJC Trainer | Лучшее Приложение для Изучения Кандзи!")
+window.title("KJC Trainer")
 window.geometry('650x310')  
 
 kanji_window=Frame(window,bg="#1F1F1F",bd=5)
@@ -69,7 +69,7 @@ enter.pack(side="top")
 space = Label(kanji_window, text="", bg="#1F1F1F", font=("YasashisaGothicBold-V2", 5))
 space.pack(side="top")
 
-show_answer = Button(kanji_window,text="Показать ответ",font=("Montserrat",15),width=15,height=1,bd=0,bg="black",fg="white",command=show_answer)
+show_answer = Button(kanji_window,text="Show Answer",font=("Montserrat",15),width=15,height=1,bd=0,bg="black",fg="white",command=show_answer)
 show_answer.pack(side="top")
 
 space = Label(kanji_window, text="", bg="#1F1F1F", font=("YasashisaGothicBold-V2", 5))
@@ -78,7 +78,7 @@ space.pack(side="top")
 space = Label(kanji_window, text="", bg="#1F1F1F", font=("YasashisaGothicBold-V2", 5))
 space.pack(side="top")
 
-text_bottom = Label(kanji_window, bg="#1F1F1F", fg="white", text="Артём Царюк, 2022",font=("Montserrat",13))
+text_bottom = Label(kanji_window, bg="#1F1F1F", fg="white", text="Artem Tsariuk, 2022",font=("Montserrat",13))
 text_bottom.pack(side="top")
 
 #---------------------------------START---------------------------------

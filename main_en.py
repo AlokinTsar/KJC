@@ -8,18 +8,22 @@ import random
 import time
 
 romaji_data = pd.read_excel(r'A:\KJC\kanji_list.xlsx')
-romaji_xlsx = pd.DataFrame(romaji_data, columns= ['EN'])
-romaji_list = romaji_xlsx['EN'].values.tolist()
+romaji_xlsx = pd.DataFrame(romaji_data, columns= ['EN DEF'])
+romaji_list = romaji_xlsx['EN DEF'].values.tolist()
 
 kanji_data = pd.read_excel(r'A:\KJC\kanji_list.xlsx')
-kanji_xlsx = pd.DataFrame(romaji_data, columns= ['KANJI'])
-kanji_list = kanji_xlsx['KANJI'].values.tolist()
+kanji_xlsx = pd.DataFrame(kanji_data, columns= ['KANJI DEF'])
+kanji_list = kanji_xlsx['KANJI DEF'].values.tolist()
+
+kana_data = pd.read_excel(r'A:\KJC\kanji_list.xlsx')
+kana_xlsx = pd.DataFrame(kana_data, columns= ['KANA DEF'])
+kana_list = kana_xlsx['KANA DEF'].values.tolist()
 
 #---------------------------------WINDOW-AND-FRAMES---------------------------------
 
 window = Tk()
 window.title("KJC Trainer | Best App To Learn Kanji!")
-window.geometry('650x280')  
+window.geometry('650x310')  
 
 kanji_window=Frame(window,bg="#1F1F1F",bd=5)
 kanji_window.pack(fill="both")
@@ -34,7 +38,9 @@ def next_kanji():
 
 	random_index = random.randint(0, len(kanji_list) - 1)
 	newest_symbol = kanji_list[random_index]
+	newest_kana = kana_list[random_index]
 	symbol.config(text = newest_symbol)
+	kana.config(text = newest_kana)
 	last_random_index = random_index
 
 def show_answer():
@@ -47,6 +53,9 @@ def clear_answer():
 	
 symbol = Label(kanji_window, text="", bg="#1F1F1F", fg="white", font=("YasashisaGothicBold-V2", 50))
 symbol.pack(side="top")
+
+kana = Label(kanji_window, text="", bg="#1F1F1F", fg="grey", font=("YasashisaGothicBold-V2", 20))
+kana.pack(side="top")
 
 answer = Label(kanji_window, text="...", bg="#1F1F1F", fg="white",  font=("Montserrat", 15))
 answer.pack(side="top")

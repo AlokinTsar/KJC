@@ -8,16 +8,16 @@ import random
 import time
 
 romaji_data = pd.read_excel(r'A:\KJC\kanji_list.xlsx')
-romaji_xlsx = pd.DataFrame(romaji_data, columns= ['RU DEF'])
-romaji_list = romaji_xlsx['RU DEF'].values.tolist()
+romaji_xlsx = pd.DataFrame(romaji_data, columns= ['RU N5'])
+romaji_list = romaji_xlsx['RU N5'].values.tolist()
 
 kanji_data = pd.read_excel(r'A:\KJC\kanji_list.xlsx')
-kanji_xlsx = pd.DataFrame(romaji_data, columns= ['KANJI DEF'])
-kanji_list = kanji_xlsx['KANJI DEF'].values.tolist()
+kanji_xlsx = pd.DataFrame(romaji_data, columns= ['KANJI N5'])
+kanji_list = kanji_xlsx['KANJI N5'].values.tolist()
 
 kana_data = pd.read_excel(r'A:\KJC\kanji_list.xlsx')
-kana_xlsx = pd.DataFrame(kana_data, columns= ['KANA DEF'])
-kana_list = kana_xlsx['KANA DEF'].values.tolist()
+kana_xlsx = pd.DataFrame(kana_data, columns= ['KANA N5'])
+kana_list = kana_xlsx['KANA N5'].values.tolist()
 
 #---------------------------------WINDOW-AND-FRAMES---------------------------------
 
